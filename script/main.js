@@ -3,19 +3,23 @@ window.addEventListener('load', () => {
     Swal.fire({
         // icon: 'info', // 'info' is a built-in icon that can be replaced with '🎉' or an image
         html: '🎉',
-        title: 'Are you ready?',
+        title: 'Please proceed forward only if you are seeing this on a laptop. Are you on your laptop?',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        cancelButtonText: 'Hell Yeahh',
+        cancelButtonText: 'No',
         confirmButtonText: 'Yes',
     }).then((result) => {
         if (result.isConfirmed) {
             document.querySelector('.song').play();
             animationTimeline();
         } else {
-            document.querySelector('.song').play();
-            animationTimeline();
+            Swal.fire({
+                title: 'Please get a laptop!',
+                text: 'This experience is optimized for laptops. Please switch to one to continue.',
+                icon: 'warning',
+                confirmButtonText: 'Got it!'
+            });
         }
     });
 });
