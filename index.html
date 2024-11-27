@@ -18,7 +18,7 @@
 <body>
 
     <audio class="song" loop autoplay>
-        <source src="./music/hbd.mpeg">
+        <source src="./music/hbd.mp3">
         </source>
         Your browser isn't invited for super fun audio time.
     </audio>
@@ -27,9 +27,9 @@
         <div class="one">
             <h1 class="one">
                 Hi
-                <span id="name">Irene</span>
+                <span id="name">Tisa</span>
             </h1>
-            <p class="two" id="greetingText">I really like your name btw!</p>
+            <p class="two" id="greetingText">I was going to get you a super thoughtful gift <br> but then I realized you already have me. So here we go...</p>
         </div>
 
         <div class="three">
@@ -39,7 +39,9 @@
         <div class="four">
             <div class="text-box">
                 <p class="hbd-chatbox">
-                Happy birthday to youu!! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quisquam amet ipsam vitae, voluptatum architecto aliquid id quo error tempora quos aperiam magni necessitatibus quas ut, possimus nesciunt nam ad.
+                Happy birthday to youu!! As you get older, three things happen:
+                The first is your memory starts to go, and I can’t remember the other two! 
+                But don’t worry — you’re still amazing and still full of life! Here’s to another year of unforgettable moments (even if we forget a few of them along the way)!
                 </p>
                 <p class="fake-btn">Send</p>
             </div>
@@ -56,7 +58,7 @@
             <p class="idea-4">Because,</p>
             <p class="idea-5">
                 You are Special
-                <span>:)</span>
+                <span class="emoji">:)</span>
             </p>
             <p class="idea-6">
                 <span>S</span>
@@ -65,11 +67,13 @@
         </div>
 
         <div class="six">
-            <img src="./img/irene.jpg" alt="profile" class="profile-picture" id="imagePath"/>
+            
+            <img src="./img/irene.png" alt="profile" class="profile-picture" id="imagePath" >
+            
             <img src="img/hat.svg" alt="hat" class="hat" />
             <div class="wish">
                 <h3 class="wish-hbd">Happy Birthday!</h3>
-                <h5 id="wishText">May the js.prototypes always be with you! ;)</h5>
+                <h5 id="wishText">Here’s to another fantastic year ahead! ;)</h5>
             </div>
         </div>
 
@@ -142,11 +146,19 @@
         </div>
 
         <div class="nine">
-            <p>Okay, now come back and tell me if you liked it.</p>
-            <p id="replay">Or click, if you want to watch it again.</p>
+            <p>Okay, now tell me where are you taking me for the Birthday Treat?.</p>
+            <p id="replay">Enter the place down, to access another page.</p>
             <p class="last-smile">:)</p>
         </div>
     </div>
+
+    <div class="password-container" style="display: none;">
+        <h2>Enter name to Access Another Page</h2>
+        <input type="password" id="passwordInput" placeholder="Enter here" />
+        <button id="submitPassword">Submit</button>
+        <p id="error-message" style="color: red; display: none;">Incorrect password. Try again.</p>
+    </div>
+    
 
 </body>
     <!-- Greensock -->

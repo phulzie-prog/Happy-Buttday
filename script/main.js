@@ -1,18 +1,20 @@
 // trigger to play music in the background with sweetalert
 window.addEventListener('load', () => {
     Swal.fire({
-        title: 'Do you want to play music in the background?',
-        icon: 'warning',
+        // icon: 'info', // 'info' is a built-in icon that can be replaced with '🎉' or an image
+        html: '🎉',
+        title: 'Are you ready?',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
+        cancelButtonText: 'Hell Yeahh',
         confirmButtonText: 'Yes',
-        cancelButtonText: 'No',
     }).then((result) => {
         if (result.isConfirmed) {
             document.querySelector('.song').play();
             animationTimeline();
         } else {
+            document.querySelector('.song').play();
             animationTimeline();
         }
     });
@@ -69,7 +71,7 @@ const animationTimeline = () => {
         },
     "+=3.5")
     .to(".two",
-        0.7,
+        2.7,
         {
             opacity: 0,
             y: 10
@@ -136,6 +138,7 @@ const animationTimeline = () => {
             y: 50,
             z: 10,
             opacity: 0,
+            
         },
         "+=1.5"
     )
@@ -144,6 +147,7 @@ const animationTimeline = () => {
         0.7, {
             rotation: 90,
             x: 8,
+            color: "#FFD700",
         },
         "+=1.4"
     )
@@ -152,6 +156,7 @@ const animationTimeline = () => {
         0.7, {
             scale: 0.2,
             opacity: 0,
+            
         },
         "+=2"
     )
@@ -262,11 +267,44 @@ const animationTimeline = () => {
             rotation: 90,
         },
         "+=1"
-    );
+    )
+    .call(showPasswordPrompt);
 
     // Restart Animation on click
     const replyBtn = document.getElementById("replay");
     replyBtn.addEventListener("click", () => {
         tl.restart();
     });
+
+    
+
+
 }
+
+
+// Add this function to the end of your animation timeline
+const showPasswordPrompt = () => {
+    const passwordContainer = document.querySelector('.password-container');
+    passwordContainer.style.display = 'block';
+
+    const submitButton = document.getElementById('submitPassword');
+    submitButton.addEventListener('click', checkPassword);
+};
+
+// Function to check the entered password
+const checkPassword = () => {
+    const correctPassword = 'yourPasswordHere'; // Change this to your desired password
+    const passwordInput = document.getElementById('passwordInput').value;
+    const errorMessage = document.getElementById('error-message');
+
+    if (passwordInput === correctPassword) {
+        // Redirect to the special page
+        window.location.href = 'special-page.html'; // Change this to your actual special page URL
+    } else {
+        errorMessage.style.display = 'block'; // Show error message
+    }
+};
+
+// Call this function at the end of your animation timeline
+    // e.g. .to(".last-smile", 0.5, { rotation: 90 }, "+=1")
+    
